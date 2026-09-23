@@ -3,7 +3,7 @@ import type { Row } from '@/lib/upstream';
 
 const LONG_TEXT = 80;
 const URL_RE = /^https?:\/\/\S+$/i;
-const NUMERIC = /^-?\d+(\.\d+)?$/;
+const NUMERIC = /^-?(\d+|\d*\.\d+)$/;
 /** 코드·번호·날짜 성격의 필드는 숫자여도 천 단위 구분 기호를 넣지 않는다 */
 const ID_LIKE = /cd$|code|no$|crno|bzno|dt$|ym$|yr$|year|isin|srtn|seq|id$/i;
 const YMD = /^(\d{4})(\d{2})(\d{2})$/;

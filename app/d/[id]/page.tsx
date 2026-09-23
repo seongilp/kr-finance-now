@@ -189,7 +189,21 @@ async function DatasetBody({ d, op, page, params }: { d: Dataset; op: Op; page: 
             총 <strong className="text-foreground">{result.total.toLocaleString()}</strong>건 · {page}/
             {lastPage.toLocaleString()} 페이지
           </p>
-          <ResultTable op={op} rows={result.rows} />
+          {result.tables ? (
+            result.tables
+              .filter((t) => t.rows.length > 0)
+              .map((t) => (
+                <div key={t.title} className="space-y-2">
+                  <h3 className="text-sm font-semibold">
+                    {t.title.replaceAll('_', ' · ')}{' '}
+                    <span className="font-normal text-muted-foreground">{t.total.toLocaleString()}건</span>
+                  </h3>
+                  <ResultTable op={op} rows={t.rows} />
+                </div>
+              ))
+          ) : (
+            <ResultTable op={op} rows={result.rows} />
+          )}
           <div className="flex justify-between">
             {page > 1 ? (
               <Button asChild variant="outline" size="sm">

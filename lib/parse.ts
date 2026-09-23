@@ -2,8 +2,15 @@
 
 export type Row = Record<string, string>;
 
+/** 금융통계 서비스는 한 응답에 여러 표(tableList)를 담는다. 표마다 컬럼이 달라 따로 그린다. */
+export interface Table {
+  title: string;
+  rows: Row[];
+  total: number;
+}
+
 export type ParseResult =
-  | { ok: true; rows: Row[]; total: number }
+  | { ok: true; rows: Row[]; total: number; tables?: Table[] }
   | { ok: false; reason: 'upstream'; message: string };
 
 type Json = Record<string, unknown>;
@@ -30,9 +37,25 @@ function parseDataGoKrJson(body: string): ParseResult {
   if (!isOkCode(code)) return upstreamError(code, String(header?.resultMsg ?? ''));
 
   const bodyNode = (envelope.body as Json | undefined) ?? {};
+  if (Array.isArray(bodyNode.tableList)) return fromTableList(bodyNode.tableList);
   const rows = toRows(extractItems(bodyNode.items));
   const total = Number(bodyNode.totalCount ?? rows.length) || 0;
   return { ok: true, rows, total };
+}
+
+function fromTableList(list: unknown[]): ParseResult {
+  const tables: Table[] = list
+    .filter((t): t is Json => !!t && typeof t === 'object')
+    .map((t) => {
+      const rows = toRows(extractItems(t.items));
+      return { title: String(t.title ?? ''), rows, total: Number(t.totalCount ?? rows.length) || 0 };
+    });
+  return {
+    ok: true,
+    rows: tables.flatMap((t) => t.rows),
+    total: Math.max(0, ...tables.map((t) => t.total)),
+    tables,
+  };
 }
 
 function extractItems(items: unknown): unknown[] {

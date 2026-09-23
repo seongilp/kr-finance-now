@@ -47,3 +47,26 @@ test('UTF-8 BOM 이 붙은 JSON 도 해석한다', () => {
   const body = '\uFEFF' + JSON.stringify({ response: { header: { resultCode: '00' }, body: { totalCount: 1, items: { item: [{ itmsNm: '삼성전자' }] } } } });
   assert.deepEqual(parseDataGoKr(body), { ok: true, total: 1, rows: [{ itmsNm: '삼성전자' }] });
 });
+
+test('금융통계 tableList: 표마다 제목·건수를 따로 두고, total 은 가장 큰 표 기준', () => {
+  const body = JSON.stringify({
+    response: {
+      header: { resultCode: '00' },
+      body: {
+        tableList: [
+          { title: '은행_일반현황_임직원현황', totalCount: 364, items: { item: [{ fncoNm: '우리은행', xcsmCnt: '13967' }] } },
+          { title: '은행_일반현황_점포현황', totalCount: 12, items: { item: { fncoNm: '국민은행', brncCnt: '800' } } },
+        ],
+      },
+    },
+  });
+  assert.deepEqual(parseDataGoKr(body), {
+    ok: true,
+    total: 364,
+    rows: [{ fncoNm: '우리은행', xcsmCnt: '13967' }, { fncoNm: '국민은행', brncCnt: '800' }],
+    tables: [
+      { title: '은행_일반현황_임직원현황', total: 364, rows: [{ fncoNm: '우리은행', xcsmCnt: '13967' }] },
+      { title: '은행_일반현황_점포현황', total: 12, rows: [{ fncoNm: '국민은행', brncCnt: '800' }] },
+    ],
+  });
+});

@@ -16,7 +16,8 @@ export interface QueryInput {
 
 // 금융위원회 데이터는 대부분 영업일 D+1 오후 갱신이라 1시간 캐시로 충분하다
 const REVALIDATE_SECONDS = 3600;
-const TIMEOUT_MS = 15_000;
+// 필터 없는 첫 조회는 원천이 20초 가까이 걸리는 서비스가 있다(주식발행·파생상품 등)
+const TIMEOUT_MS = 25_000;
 
 export async function query({ op, params, page, size }: QueryInput): Promise<QueryResult> {
   // data.go.kr 인코딩 키는 이미 퍼센트 인코딩된 상태라 그대로 붙여야 한다(재인코딩하면 code 30)
