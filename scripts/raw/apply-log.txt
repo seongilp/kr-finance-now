@@ -1,0 +1,265 @@
+--- 15043184 금융위원회_기업기본정보
+    applied OK key=0126552371
+--- 15043232 금융위원회_금융회사기본정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552392
+--- 15043284 금융위원회_주식배당정보
+    apply form error: no_reqForm
+--- 15043285 금융위원회_파산금융회사기본정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552394
+--- 15043360 금융위원회_크라우드펀딩중개업자정보
+    applied OK key=0126552395
+--- 15043362 금융위원회_공매자산정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552396
+--- 15043364 금융위원회_주식분포및사고주권정보
+    applied OK key=0126552398
+--- 15043421 금융위원회_채권발행정보
+    applied OK key=0126552399
+--- 15043423 금융위원회_주식발행정보
+    applied OK key=0126552403
+--- 15043445 금융위원회_국제거래외화증권예탁결제정보
+    applied OK key=0126552409
+--- 15043446 금융위원회_단기금융증권거래정보
+    applied OK key=0126552410
+--- 15043459 금융위원회_기업재무정보
+    apply form error: no_reqForm
+--- 15043461 금융위원회_신주인수권증권발행정보
+    applied OK key=0126552415
+--- 15043462 금융위원회_채권대차정보
+    applied OK key=0126552416
+--- 15059581 금융위원회_정보공개재산정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552417
+--- 15059582 금융위원회_국제거래종목정보
+    applied OK key=0126552419
+--- 15059585 금융위원회_차입투자정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552420
+--- 15059586 금융위원회_모기지론상환내역통계정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552421
+--- 15059587 금융위원회_모기지론발행통계정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552422
+--- 15059588 금융위원회_모기지론증권원본및이자상환추이정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552423
+--- 15059589 금융위원회_모기지론원본및이자지급정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552426
+--- 15059590 금융위원회_모기지론콜옵션행사내역정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552427
+--- 15059591 금융위원회_단기금융증권발행정보
+    applied OK key=0126552429
+--- 15059592 금융위원회_채권기본정보
+    applied OK key=0126552430
+--- 15059593 금융위원회_금융회사지배구조정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552431
+--- 15059594 금융위원회_금융회사재무신용정보
+    applied OK key=0126552454
+--- 15059595 금융위원회_채권권리행사정보
+    applied OK key=0126552455
+--- 15059597 금융위원회_지배구조정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552456
+--- 15059598 금융위원회_REPO거래정보
+    applied OK key=0126552457
+--- 15059599 금융위원회_모기지론발행상세정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552460
+--- 15059600 금융위원회_모기지론종목기본정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552462
+--- 15059601 금융위원회_파산금융회사재무상태표정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552463
+--- 15059602 금융위원회_파산금융회사손익계산서정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552465
+--- 15059603 금융위원회_모기지론시장거래현황정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552466
+--- 15059604 금융위원회_모기지론기초자산정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552467
+--- 15059605 금융위원회_모기지론증권잔액현황정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552470
+--- 15059606 금융위원회_금융회사부보정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552471
+--- 15059607 금융위원회_주식등록예탁가능정보
+    applied OK key=0126552473
+--- 15059608 금융위원회_금융회사자금지원및회수정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552474
+--- 15059609 금융위원회_주식권리일정정보
+    applied OK key=0126552475
+--- 15059610 금융위원회_REPO종목정보
+    applied OK key=0126552478
+--- 15059611 금융위원회_채권권리일정정보
+    applied OK key=0126552479
+--- 15059612 금융위원회_주식대차정보
+    applied OK key=0126552480
+--- 15059613 금융위원회_크라우드펀딩정보
+    applied OK key=0126552481
+--- 15059614 금융위원회_국가자산정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552484
+--- 15059649 금융위원회_공시정보
+    applied OK key=0126552486
+--- 15059651 금융위원회_금융회사공시정보
+    applied OK key=0126552487
+--- 15061195 금융위원회_금융통계공통(신탁)정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552488
+--- 15061288 금융위원회_금융통계공통(파생상품)정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552489
+--- 15061304 금융위원회_금융통계국내은행정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552491
+--- 15061306 금융위원회_금융통계생명보험정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552493
+--- 15061307 금융위원회_금융통계손해보험정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552494
+--- 15061308 금융위원회_금융통계신용카드사정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552496
+--- 15061312 금융위원회_금융통계종합금융회사정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552497
+--- 15061316 금융위원회_금융통계저축은행정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552498
+--- 15061320 금융위원회_금융통계증권사정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552499
+--- 15061325 금융위원회_금융통계자산운용사정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552500
+--- 15061329 금융위원회_금융통계외은지점정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552501
+--- 15061331 금융위원회_금융통계리스사정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552502
+--- 15061333 금융위원회_금융통계금융지주회사정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552503
+--- 15061335 금융위원회_금융통계부동산신탁정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552504
+--- 15061336 금융위원회_금융통계신기술금융사정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552505
+--- 15061337 금융위원회_금융통계신용협동조합정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552506
+--- 15061340 금융위원회_금융통계수산업협동조합정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552508
+--- 15061344 금융위원회_금융통계농업협동조합정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552510
+--- 15061349 금융위원회_금융통계산림조합정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552512
+--- 15061356 금융위원회_금융통계할부금융사정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552515
+--- 15061357 금융위원회_금융통계선물사정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552517
+--- 15061358 금융위원회_금융통계투자자문사정보
+    swagger parse error: {'_parse_error': 'Expecting value: line 1 column 1 (char 0)', '_raw_len': 0}
+    applied OK key=0126552519
+--- 15094775 금융위원회_KRX상장종목정보
+    applied OK key=0126552520
+--- 15094783 금융위원회_소매채권수익률정보
+    applied OK key=0126552526
+--- 15094784 금융위원회_채권시세정보
+    applied OK key=0126552528
+--- 15094787 금융위원회_서민금융상품기본정보
+    applied OK key=0126552530
+--- 15094788 금융위원회_ISA다모아정보
+    applied OK key=0126552531
+--- 15094792 금융위원회_펀드상품기본정보
+    applied OK key=0126552552
+--- 15094793 금융위원회_변액보험기본정보
+    applied OK key=0126552553
+--- 15094795 금융위원회_금융투자회사공시정보
+    applied OK key=0126552555
+--- 15094797 금융위원회_실손보험정보
+    applied OK key=0126552557
+--- 15094798 금융위원회_퇴직연금기본정보
+    applied OK key=0126552558
+--- 15094799 금융위원회_금융투자협회기타공시정보
+    applied OK key=0126552560
+--- 15094801 금융위원회_서민금융지원실적정보
+    applied OK key=0126552561
+--- 15094802 금융위원회_파생상품시세정보
+    applied OK key=0126552562
+--- 15094805 금융위원회_일반상품시세정보
+    applied OK key=0126552563
+--- 15094806 금융위원회_증권상품시세정보
+    applied OK key=0126552565
+--- 15094807 금융위원회_지수시세정보
+    applied OK key=0126552566
+--- 15094808 금융위원회_주식시세정보
+    applied OK key=0126552567
+--- 15094809 금융위원회_금융투자협회종합통계정보
+    applied OK key=0126552569
+--- 15108168 금융위원회_개인사업자기본정보
+    applied OK key=0126552570
+--- 15108171 금융위원회_개인사업자재무정보
+    applied OK key=0126552571
+--- 15108175 금융위원회_개인사업자금융정보
+    applied OK key=0126552592
+--- 15108177 금융위원회_개인사업자평가정보
+    applied OK key=0126552593
+--- 15124847 금융위원회_사회적채권정보
+    applied OK key=0126552594
+--- 15124865 금융위원회_주식대차거래정보
+    applied OK key=0126552595
+--- 15124889 금융위원회_채권대차거래정보
+    applied OK key=0126552596
+--- 15124891 금융위원회_﻿자동차보험가입정보
+    applied OK key=0126552597
+--- 15124892 금융위원회_생명보험가입정보
+    applied OK key=0126552598
+--- 15124894 금융위원회_일반손해보험가입정보
+    applied OK key=0126552600
+--- 15124895 금융위원회_침수차량진위확인
+    applied OK key=0126552601
+--- 15139255 금융위원회_자금조달공시정보
+    applied OK key=0126552602
+--- 15139266 금융위원회_자산운용사영업활동통계정보
+    applied OK key=0126552603
+--- 15139267 금융위원회_투자자문사영업및경영지표통계정보
+    applied OK key=0126552604
+--- 15139269 금융위원회_사회적금융지원정보
+    applied OK key=0126552605
+--- 15150946 금융위원회_주식발행공시정보
+    applied OK key=0126552606
+--- 15151165 금융위원회_기업지배구조공시정보
+    applied OK key=0126552607
+--- 15151172 금융위원회_주택연금가입정보
+    applied OK key=0126552609
+--- 15151180 금융위원회_ESG지수정보
+    applied OK key=0126552610
+--- 15151192 금융위원회_ESG증권상품정보
+    applied OK key=0126552611
+--- 15151230 금융위원회_펀드상품판매현황정보
+    applied OK key=0126552612
+--- 15151234 금융위원회_자동차보험피해자통계정보
+    applied OK key=0126552613
+--- 15151237 금융위원회_생명보험사고원인정보
+    applied OK key=0126552614
+=== DONE. total processed: 110
