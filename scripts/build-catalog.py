@@ -63,7 +63,19 @@ def clean(s: str) -> str:
     return s if len(s) <= 24 else s[:22] + '…'
 
 
+# 원문 설명이 문장형이라 표 머리로 쓰기엔 긴 핵심 필드 — 짧은 이름으로 고정
+FIELD_LABELS = {
+    'basDt': '기준일자', 'basYm': '기준연월', 'crno': '법인등록번호', 'itmsNm': '종목명', 'srtnCd': '단축코드',
+    'isinCd': 'ISIN', 'isinCdNm': 'ISIN명', 'mrktCtg': '시장', 'mrktCls': '시장', 'clpr': '종가', 'vs': '대비',
+    'fltRt': '등락률', 'mkp': '시가', 'hipr': '고가', 'lopr': '저가', 'trqu': '거래량', 'trPrc': '거래대금',
+    'lstgStCnt': '상장주식수', 'mrktTotAmt': '시가총액', 'idxNm': '지수명', 'idxCsf': '지수분류',
+    'fncoNm': '금융회사명', 'fncoCd': '금융회사코드', 'corpNm': '법인명', 'bizYear': '사업연도', 'bizYr': '사업연도',
+}
+
+
 def field_label(name: str, desc: str) -> str:
+    if name in FIELD_LABELS:
+        return FIELD_LABELS[name]
     d = re.sub(r'\s+', ' ', desc or '').strip()
     return (d if len(d) <= 24 else d[:22] + '…') or name
 

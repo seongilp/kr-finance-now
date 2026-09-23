@@ -99,7 +99,9 @@ export default async function DatasetPage({ params, searchParams }: PageProps<'/
 }
 
 const PRIMARY_LIMIT = 3;
-const PRIMARY_HINT = /^(종목명|기준일자|기준연월|사업연도|금융회사명|회사명|법인등록번호)|명 \(포함\)$/;
+const NAME_SEARCH = /명 \(포함\)$/;
+const KEY_EXACT = /^(기준일자|기준연월|사업연도|법인등록번호|금융회사명|회사명|종목명)$/;
+const RANGE = /(이상|미만|\(포함\))$/;
 
 /** 필수 항목과 이름·코드류 몇 개만 바로 보이고, 나머지는 접어 둔다(모바일에서 폼이 화면을 다 먹지 않게) */
 function splitParams(op: Op): { primary: OpParam[]; more: OpParam[] } {
@@ -113,9 +115,12 @@ function splitParams(op: Op): { primary: OpParam[]; more: OpParam[] } {
   };
 }
 
+/** 필수 → '○○명 (포함)' 이름 검색 → 기준일자·법인번호 같은 핵심 일치 조건 → 기타 → 범위·부분일치 */
 function rank(p: OpParam): number {
   if (p.required) return 0;
-  return PRIMARY_HINT.test(p.label) ? 1 : 2;
+  if (NAME_SEARCH.test(p.label)) return 1;
+  if (KEY_EXACT.test(p.label)) return 2;
+  return RANGE.test(p.label) ? 4 : 3;
 }
 
 function ParamInput({ p, value }: { p: OpParam; value: string }) {

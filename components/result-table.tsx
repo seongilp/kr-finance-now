@@ -17,13 +17,24 @@ function display(name: string, v: string): string {
   return v;
 }
 
+/** 어느 데이터든 이 순서로 맨 앞에 — 날짜와 '무엇'이 먼저 보여야 표가 읽힌다 */
+const PINNED = ['basDt', 'basYm', 'bizYr', 'itmsNm', 'idxNm', 'fncoNm', 'corpNm', 'cmpyNm'];
+
 /** 응답에 실제로 등장한 필드만, 카탈로그 순서대로. 카탈로그에 없는 필드는 뒤에 붙인다. */
 function columnsFor(op: Op, rows: Row[]): { name: string; label: string }[] {
   const present = new Set(rows.flatMap((r) => Object.keys(r)));
   const known = op.fields.filter((f) => present.has(f.name));
   const knownNames = new Set(known.map((f) => f.name));
   const extra = [...present].filter((n) => !knownNames.has(n)).map((name) => ({ name, label: name }));
-  return [...known, ...extra].filter((c) => rows.some((r) => r[c.name]?.trim()));
+  const pin = (name: string) => {
+    const i = PINNED.indexOf(name);
+    return i < 0 ? PINNED.length : i;
+  };
+  return [...known, ...extra]
+    .filter((c) => rows.some((r) => r[c.name]?.trim()))
+    .map((c, i) => ({ c, i }))
+    .sort((a, b) => pin(a.c.name) - pin(b.c.name) || a.i - b.i)
+    .map(({ c }) => c);
 }
 
 function Cell({ name, value }: { name: string; value: string }) {
