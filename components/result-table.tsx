@@ -55,7 +55,9 @@ function Cell({ name, value }: { name: string; value: string }) {
       </details>
     );
   }
-  return <span className={NUMERIC.test(v) ? 'tabular-nums' : undefined}>{display(name, v)}</span>;
+  const shown = display(name, v);
+  // 날짜·숫자·짧은 값은 줄바꿈하면 읽기 어렵다
+  return <span className={`${NUMERIC.test(v) ? 'tabular-nums ' : ''}${shown.length <= 14 ? 'whitespace-nowrap' : ''}`}>{shown}</span>;
 }
 
 export function ResultTable({ op, rows }: { op: Op; rows: Row[] }) {

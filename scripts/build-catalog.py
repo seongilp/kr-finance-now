@@ -11,7 +11,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / 'scripts/raw/apis.json'
-SAMPLES = ROOT / 'scripts/raw/samples'
+# 응답 필드 한글명(data.go.kr swagger·응답표에서 수집). src=guess(토큰 조합 추정)는 틀린 뜻이 섞여 쓰지 않는다.
+FIELD_LABEL_SRC = ROOT / 'scripts/raw/field-labels.json'
 OUT = ROOT / 'data/catalog.json'
 
 SYSTEM_PARAMS = {'servicekey', 'pageno', 'numofrows', 'resulttype', 'type', '_type'}
@@ -94,8 +95,19 @@ def sample_value(name: str) -> str | None:
 RESPONSE_META = {'resultCode', 'resultMsg', 'numOfRows', 'pageNo', 'totalCount'}
 
 
+def official_labels() -> dict[str, dict[str, str]]:
+    if not FIELD_LABEL_SRC.exists():
+        return {}
+    raw = json.loads(FIELD_LABEL_SRC.read_text())
+    return {
+        ep: {name: field_label(name, v['label']) for name, v in m.items() if v.get('src') == 'official'}
+        for ep, m in raw.items()
+    }
+
+
 def build() -> list[dict]:
     src = json.loads(SRC.read_text())
+    extra_labels = official_labels()
     out = []
     for api in src:
         base = 'https://' + api['endpoint'].removeprefix('https://').removeprefix('http://').rstrip('/')
@@ -120,6 +132,8 @@ def build() -> list[dict]:
                 for f in o.get('fields') or []
                 if f['name'] not in RESPONSE_META and f['name'] not in {'items', 'item', 'header', 'body', 'response'}
             ]
+            have = {f['name'] for f in fields}
+            fields += [{'name': n, 'label': l} for n, l in extra_labels.get(base + path, {}).items() if n not in have]
             ops.append({
                 'id': op_id,
                 'name': o.get('label') or op_id,
